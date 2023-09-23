@@ -1,22 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
+import { RouterProvider } from 'react-router-dom'
+import myCreatedRoute from './Route/Rout'
 
-const myCreatedRoute = createBrowserRouter([
-  {
-    path: '/',
-    element: <div>hello</div>
-  },
-  {
-    path:'/products',
-    element: <div>products</div>
-  },
-  {
-    path:'/about',
-    element: <div>abouts</div>
-  },
-])
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
