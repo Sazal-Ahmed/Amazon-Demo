@@ -1,4 +1,4 @@
-import { Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 
 
 const MainLayout = () => {
@@ -11,9 +11,13 @@ const MainLayout = () => {
                 <div className=" font-bold"><h1>Amazon</h1></div>
                 <nav>
                     <ul className="flex gap-5">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/products">Products</a></li>
-                        <li><a href="/dashboard">Dashboard</a></li>
+                        <NavLink to="/" className={({isActive, isPending}) => isPending ? 'pending' : isActive? 'underline' :''}
+                        >Home</NavLink>
+                        <NavLink to="/products" className={({isActive, isPending}) => isPending ? 'pending' : isActive? 'underline' :''}
+                        >Products</NavLink>
+                        <NavLink to="/dashboard" className={({isActive, isPending}) => isPending ? 'pending' : isActive? 'underline' :''}
+                        >Dashboard</NavLink>
+                        
                     </ul>
                 </nav>
 
