@@ -3,8 +3,12 @@ import { createBrowserRouter } from 'react-router-dom';
 import MainLayout from '../Layouts/MainLayout';
 import Home from '../Pages/Home/Home';
 import Products from '../Pages/Products/Products';
-import Dashboard from '../Pages/Dashboard/Dashboard';
+
 import Product from '../Pages/Product/Product';
+import DashboardLayout from '../Layouts/DashboardLayout';
+import Dashboard from '../Pages/Dashboard/Dashboard';
+import Profile from '../Pages/Profile/Profile';
+import EditProfile from '../Pages/EditProfile/EditProfile';
 
 const myCreatedRoute = createBrowserRouter([
     {
@@ -28,7 +32,22 @@ const myCreatedRoute = createBrowserRouter([
         },
         {
             path:'/dashboard',
-            element:<Dashboard></Dashboard>
+            element:<DashboardLayout></DashboardLayout>,
+            children:[
+              {
+                path:'/dashboard',
+                element:<Dashboard></Dashboard>
+              },
+              {
+                path: '/dashboard/profile',
+                element: <Profile></Profile>
+              },
+              {
+                path:'/dashboard/editprofile',
+                element: <EditProfile></EditProfile>
+            }
+              
+            ]
         }
   
       ]

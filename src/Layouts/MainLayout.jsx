@@ -2,6 +2,9 @@ import { Outlet } from "react-router-dom";
 
 
 const MainLayout = () => {
+
+    
+
     return (
         <div>
             <section className="flex justify-between shadow-md px-10 py-6 mb-4">
